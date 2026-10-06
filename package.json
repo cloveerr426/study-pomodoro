@@ -1,0 +1,33 @@
+{
+  "name": "study-pomodoro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "可自定义壁纸与主题的单文件番茄钟（自律学习计时器）",
+  "keywords": [
+    "pomodoro",
+    "timer",
+    "study",
+    "focus",
+    "wallpaper",
+    "theme"
+  ],
+  "author": "cloveerr426 <1582833120@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/cloveerr426/study-pomodoro",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloveerr426/study-pomodoro.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "test": "node tests/functional.mjs && node tests/local-file.mjs && node tests/layout.mjs",
+    "test:functional": "node tests/functional.mjs",
+    "test:local": "node tests/local-file.mjs",
+    "test:layout": "node tests/layout.mjs",
+    "shots": "node tests/screenshots.mjs"
+  }
+}

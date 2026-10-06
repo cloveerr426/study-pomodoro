@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    name: 端到端测试（124 项）
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 运行测试
+        run: |
+          BROWSER="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium || command -v chromium-browser)"
+          if [ -z "$BROWSER" ]; then
+            echo "运行环境里没有找到 Chrome / Chromium，改用 apt 安装"
+            sudo apt-get update
+            sudo apt-get install -y chromium-browser || sudo apt-get install -y chromium
+            BROWSER="$(command -v chromium-browser || command -v chromium)"
+          fi
+          echo "使用浏览器: $BROWSER"
+          export BROWSER
+          npm test

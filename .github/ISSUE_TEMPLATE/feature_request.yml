@@ -1,0 +1,25 @@
+name: 功能建议
+description: 想要新功能或改进现有体验
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: 你想要什么
+      placeholder: 例如：希望支持一组壁纸自动轮播。
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 使用场景
+      description: 你在什么情况下需要它？
+    validations:
+      required: false
+  - type: textarea
+    id: alt
+    attributes:
+      label: 你考虑过的替代方案
+    validations:
+      required: false

@@ -1,0 +1,14 @@
+# 依赖（本项目零依赖，一般不会出现）
+node_modules/
+
+# 产物与临时文件
+_site/
+*.log
+*.tmp
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

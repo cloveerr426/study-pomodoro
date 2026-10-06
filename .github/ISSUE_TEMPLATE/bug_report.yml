@@ -1,0 +1,52 @@
+name: 报告问题
+description: 使用中遇到了 Bug 或显示异常
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 感谢反馈！请尽量把信息填完整，方便快速定位问题。
+  - type: textarea
+    id: what
+    attributes:
+      label: 问题描述
+      description: 发生了什么？期望的结果是什么？
+      placeholder: 例如：上传壁纸后刷新页面，壁纸变回了默认的极光。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开页面
+        2. 点击「壁纸 → 上传图片」
+        3. 选择一张图片
+        4. 按 F5 刷新
+    validations:
+      required: true
+  - type: dropdown
+    id: how
+    attributes:
+      label: 你是怎么打开它的？
+      options:
+        - 双击 index.html 本地文件打开
+        - 本地服务器（npm start）
+        - GitHub Pages 在线地址
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: 浏览器与系统
+      placeholder: 例如：Chrome 141 / Windows 11，或 Safari / iPhone 15
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 截图或补充信息
+      description: 显示类问题请附截图；控制台报错也可以贴在这里。
+    validations:
+      required: false
