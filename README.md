@@ -89,54 +89,6 @@ node tools/serve.mjs
 | `F` | 全屏 |
 | `Esc` | 退出沉浸模式 / 关闭抽屉 |
 
-## 项目结构
-
-```
-study-pomodoro/
-├─ index.html                 # 应用本体（HTML + CSS + JS 全在这一个文件里）
-├─ tests/                     # 零依赖端到端测试（Node 内置能力 + 本机浏览器）
-│  ├─ lib/harness.mjs         # 测试工具库：静态服务 / 启动浏览器 / CDP / 截图分析
-│  ├─ functional.mjs          # 62 项：计时、循环、任务、统计、主题、壁纸、持久化
-│  ├─ local-file.mjs          # 13 项：file:// 直接打开时的存储降级路径
-│  ├─ layout.mjs              # 49 项：多尺寸布局溢出与文字对比度审计
-│  └─ screenshots.mjs         # 重新生成 docs/screenshots 里的截图
-├─ tools/serve.mjs            # 本地静态服务器（npm start）
-├─ docs/screenshots/          # README 用的截图
-└─ .github/workflows/         # GitHub Pages 部署 + 测试
-```
-
-## 开发与测试
-
-需要 **Node.js ≥ 22**（用到内置的 `fetch` 与 `WebSocket`）和本机已安装的 **Chrome / Edge**，
-不需要 `npm install`——测试直接驱动真实浏览器，不引入任何第三方依赖。
-
-```bash
-npm test               # 依次跑三套测试，共 124 项检查
-npm run test:functional
-npm run test:layout
-npm run shots          # 重新生成文档截图
-```
-
-不装 npm 也能跑（效果完全一样）：
-
-```bash
-node tests/functional.mjs
-node tests/local-file.mjs
-node tests/layout.mjs
-node tests/screenshots.mjs
-```
-
-如果自动探测不到浏览器，用环境变量指定：
-
-```bash
-BROWSER="C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" npm test
-# Linux / macOS
-BROWSER=/usr/bin/google-chrome-stable npm test
-```
-
-测试做了什么：起一个本地静态服务器 → 用无头浏览器打开页面 → 通过 DevTools 协议真实点击按钮、
-让计时器真的走秒、完成番茄、换壁纸换主题、刷新页面验证持久化 → 最后截图并用像素统计检查
-文字对比度、元素溢出与重叠。CI 配置在 `.github/workflows/test.yml`。
 
 ## 想改点什么
 
