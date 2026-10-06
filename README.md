@@ -89,28 +89,6 @@ node tools/serve.mjs
 | `F` | 全屏 |
 | `Esc` | 退出沉浸模式 / 关闭抽屉 |
 
-## 上传到 GitHub
-
-```bash
-cd study-pomodoro
-git init
-git add .
-git commit -m "feat: 番茄自习室 v1.0.0 —— 可自定义壁纸与主题的番茄钟"
-git branch -M main
-git remote add origin https://github.com/cloveerr426/study-pomodoro.git
-git push -u origin main
-```
-
-用户名我已经按 `cloveerr426` 填好（依据你本机的 git 配置）。如果你的 GitHub 用户名不是这个，
-在编辑器里全局搜索替换 `cloveerr426` 即可；装了 Git Bash / WSL / macOS 的话也可以一行搞定：
-
-```bash
-git grep -l cloveerr426 | xargs sed -i "s/cloveerr426/你的用户名/g"
-```
-
-另外 README 顶部徽章默认是注释掉的：推送到 GitHub 后，把 `README.md` 开头那段
-`<!-- ... -->` 的注释去掉（并把里面的 `USER/REPO` 换成你的仓库），徽章就会点亮。
-
 ## 项目结构
 
 ```
