@@ -54,30 +54,9 @@
 
 ## 快速开始
 
-### 方式一：直接用（推荐新手）
-
 下载 `index.html`，双击用浏览器打开即可。想更像一个 App，可以在浏览器里「添加到主屏幕」或按 `F` 全屏。
 
-### 方式二：本地服务器（图片保留原图画质）
 
-```bash
-npm start          # 起一个本地服务器，默认 http://127.0.0.1:5173
-```
-
-没有装 npm 也没关系，直接用 Node 运行同样的脚本：
-
-```bash
-node tools/serve.mjs
-```
-
-### 方式三：在线使用（GitHub Pages）
-
-仓库里已经带好自动部署配置，推到 GitHub 后：
-
-1. 打开仓库 **Settings → Pages**；
-2. 在 **Build and deployment → Source** 选择 **GitHub Actions**；
-3. 推送到 `main` 分支（或手动触发 `Deploy to GitHub Pages` 这个 workflow）；
-4. 稍等片刻，访问 `https://cloveerr426.github.io/study-pomodoro/`。
 
 ## 键盘快捷键
 
